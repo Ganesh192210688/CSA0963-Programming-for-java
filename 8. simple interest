@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class InterestCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the principal amount:");
+        int pri = input.nextInt();
+        System.out.println("Enter the number of years:");
+        int year = input.nextInt();
+        System.out.println("Enter 'y' if you are a youth, otherwise enter 'n':");
+        char age = input.next().charAt(0);
+
+        input.close();
+        double interest = 0.0;
+        if (age == 'y') {
+            interest = (pri * year * 0.12) / 100;
+        } else {
+            interest = (pri * year * 0.10) / 100;
+        }
+        System.out.println("The calculated interest is: " + interest);
+    }
+}
