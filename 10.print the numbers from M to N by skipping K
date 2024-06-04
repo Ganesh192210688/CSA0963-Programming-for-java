@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class NumberSequence {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the starting value (m):");
+        int m = input.nextInt();
+        System.out.println("Enter the ending value (n):");
+        int n = input.nextInt();
+        System.out.println("Enter the step value (k):");
+        int k = input.nextInt();
+        for (int i = m; i <= n; i += k) {
+            System.out.print(i + " ");
+        }
+        input.close(); 
+    }
+}
