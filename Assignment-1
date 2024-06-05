@@ -1,0 +1,173 @@
+1.public class Student {
+    private String name;
+    private int rollNumber;
+    private double marks;
+    public Student(String name, int rollNumber, double marks) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+    public void displayStudentDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Marks: " + marks);
+    }
+    public static void main(String[] args) {
+        Student student1 = new Student("John Doe", 101, 85.5);
+        student1.displayStudentDetails();
+        student1.setName("Jane Smith");
+        student1.setRollNumber(102);
+        student1.setMarks(90.0);
+        System.out.println("\nUpdated Student Details:");
+        student1.displayStudentDetails();
+    }
+}
+2.class Person {
+    private String name;
+    private int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Method to display person details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Derived class Employee
+class Employee extends Person {
+    // Field for Employee class
+    private double salary;
+
+    // Constructor
+    public Employee(String name, int age, double salary) {
+        super(name, age); // Call the constructor of the base class
+        this.salary = salary;
+    }
+
+    // Getter for salary
+    public double getSalary() {
+        return salary;
+    }
+
+    // Setter for salary
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    // Method to display employee details
+    @Override
+    public void displayDetails() {
+        super.displayDetails(); // Call the displayDetails method of the base class
+        System.out.println("Salary: " + salary);
+    }
+
+    // Main method to test the classes
+    public static void main(String[] args) {
+        // Creating a Person object
+        Person person1 = new Person("Alice Johnson", 30);
+        System.out.println("Person Details:");
+        person1.displayDetails();
+
+        // Creating an Employee object
+        Employee employee1 = new Employee("Bob Smith", 45, 75000);
+        System.out.println("\nEmployee Details:");
+        employee1.displayDetails();
+    }
+}
+3.import java.util.Scanner;
+public class SumArrayElements {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for the size of the array
+        System.out.print("Enter the number of elements in the array: ");
+        int size = scanner.nextInt();
+
+        // Create an array of the specified size
+        int[] array = new int[size];
+
+        // Prompt the user to input the elements of the array
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Calculate the sum of all elements in the array
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += array[i];
+        }
+
+        // Print the sum of the elements
+        System.out.println("The sum of all elements in the array is: " + sum);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+4.import java.util.Scanner;
+public class FactorialCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter a number to calculate its factorial: ");
+        int number = scanner.nextInt();
+
+        // Calculate the factorial using a for loop
+        long factorial = 1; // Use long to handle large numbers
+        for (int i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+
+        // Print the result
+        System.out.println("The factorial of " + number + " is " + factorial);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
